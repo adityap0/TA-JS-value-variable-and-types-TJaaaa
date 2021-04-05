@@ -5,7 +5,6 @@
  * [ ] After you've calculated your purchase amount, add in the tax, then print out the calculated purchase amount, properly formatted like ($334.76).
  * [ ] Finally, check the amount against your bank account balance to see if you can afford it or not.
 */
-
 const SPENDING_THRESHOLD = 200;
 const TAX_RATE = 0.08;
 const PHONE_PRICE = 99.99;
@@ -14,5 +13,29 @@ const ACCESSORY_PRICE = 9.99;
 var bank_balance = 303.91;
 var amount = 0;
 // your code goes here
+// while(bank_balance>0)
+// {
+//     amount = amount + PHONE_PRICE;
+//     while(amount < SPENDING_THRESHOLD)
+//     {  
+//         amount = amount + ACCESSORY_PRICE;
+//     }
+//     amount = amount + TAX_RATE*amount;
+    
+//     bank_balance = bank_balance - amount;
+// }
+
+for (let i =0; bank_balance > amount; i++)
+{
+    amount = amount + PHONE_PRICE;
+    while(amount<SPENDING_THRESHOLD)
+    {
+        amount = amount + ACCESSORY_PRICE;
+    }
+    amount = amount + TAX_RATE*amount;
+    bank_balance = bank_balance - amount;
+}
+alert(`$ ${amount}`);
 
 // ⛑ Answer of the above will `$334.76`.
+
